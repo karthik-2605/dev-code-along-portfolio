@@ -1,0 +1,721 @@
+*{
+	box-sizing: border-box;
+	margin: 0;
+	padding: 0;
+	font-family: 'Poppins', sans-serif;
+}
+
+html{
+	scroll-behavior: smooth;
+}
+body{
+	background-color: #080808;
+	color: #ffff;
+}
+
+
+
+header{
+	background-image: url(images./background.png);
+	width: 100%;
+	height: 100vh;
+	background-size: cover;
+	background-position: center;
+}
+
+
+.navbar_container{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	z-index: 99;
+	padding: 0 60px;
+	width: 100%;
+	height: 50px;
+	
+}
+
+.navbar_logo{
+	font-size: 1.4rem;
+	padding-left: 20px;
+}
+
+.navbar_logo a{
+	color: #ffff;
+	text-decoration: none;
+	background-image: linear-gradient(to top, #ff0844 50%, #ffb1 100%);
+	-webkit-background-clip : text;
+	-webkit-text-fill-color: transparent;
+	font-size: 2rem;
+	font-weight: 400;
+}
+
+.navbar_menu{
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	list-style: none;
+
+}
+
+.navbar_menu_item{
+	padding: 25px;
+}
+
+.navbar_menu_item a{
+	text-decoration: none;
+	color: #ffff;
+	cursor: pointer;
+	position: relative;   /* if position relative not specified then the after content is with respect to body which is not visible to us */
+}
+
+
+.navbar_menu_item a::after{
+	content: '';
+	width: 0;
+	height: 3px;
+	left: 0;
+	transition: 0.5s;
+	background: #ff0844;
+	position: absolute;     /* defining the position is very important. else it will place the content with respect to parent i.e body which will be not visible */
+	bottom: -6px;
+
+}
+
+
+.navbar_menu_item a:hover:after{
+	width: 100%;
+
+}
+
+
+.main{
+	margin-top: 15%;
+	font-size: 30px;
+	margin-left: 10%;
+}
+
+.main h1{
+	font-size: 60px;
+	margin-top: 20px;
+}
+
+.main h1 span{
+	background-image: linear-gradient(to top, #ff0844 50%, #ffb1 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;
+}
+
+@media screen and (max-width: 960px){
+	.navbar_container{
+		display: flex;
+		justify-content: space-between;
+		align-items: center;
+		width: 100%;
+		height: 50px;
+		z-index:999;
+		padding: 0 60px;
+		max-width: 1300px;
+		position: relative;
+		
+	}
+
+	.navbar_menu{
+		display: grid;
+		grid-template-columns: auto;
+		width: 100%;
+		position: absolute;
+		background-color: #080808;
+		top: -1000px;
+		transition: all 0.5s ease-in-out;
+
+	}
+
+	.navbar_menu_item{
+		margin-right: 130px;
+		transition: 0.3s ease-in-out;
+	}
+
+	.navbar_menu_item:hover{
+		color: #ff0844;
+	}
+
+	.navbar_menu_item_contact{
+		border: 1px solid #ff0844;
+		padding: 15px 30px;
+		margin-bottom: 20px;
+		border-radius: 4px;
+		background-color: #ff0844;
+		cursor: pointer;
+	}
+
+	.navbar_menu.active{
+		top:50px;
+		background-color: #080808;
+		opacity: 1;
+		transition: all 0.5s ease-in-out;
+		z-index: 99;
+		position: absolute;
+	}
+
+
+	.navbar_toggle{
+		display: block;
+		z-index: 1000;
+		cursor: pointer;
+	}
+
+	.navbar_toggle .navbar_toggle_item{
+		width: 30px;
+		height: 3px;
+		background-color: #f2f2f2;
+		margin: 5px auto;
+		display: block;
+		cursor: pointer;
+		transition: all 0.5s ease-in-out;
+		
+	}
+
+
+
+	#mobile-menu.is-active .navbar_toggle_item:nth-child(2){
+		opacity: 0;
+	}
+
+	#mobile-menu.is-active .navbar_toggle_item:nth-child(1){
+		transform: translateY(8px) rotate(45deg);
+	}
+
+	#mobile-menu.is-active .navbar_toggle_item:nth-child(3){
+		transform: translateY(-8px) rotate(-45deg);
+	}
+
+
+	.main{
+		font-size: 20px;
+		margin-top: 250px;
+	}
+
+	.main h1{
+		font-size: 45px;
+	}
+}
+
+
+
+
+@media screen and (max-width: 600px){
+	header{
+		background-image: url('./images/phone-background.png');
+	}
+
+	.main{
+		margin-top: 340px;
+		font-size: 25px;
+		
+	}
+
+	.main h1{
+		font-size: 40px;
+		
+	}
+
+}
+
+
+
+
+
+
+
+
+
+
+/*  ------------------------------------- ABOUT SECTION ----------------------------------------  */
+
+.about_main{
+	padding: 80px 0;
+	color: #ababab;
+	margin-left: 10%;
+	margin-right: 60px;
+}
+
+.row{
+	display: flex;
+	justify-content: space-between;
+}
+
+
+.left_column{
+	flex-basis: 35%;
+}
+
+.left_column img{
+	border-radius: 15px;
+	width: 100%;
+}
+
+
+.right_column{
+	flex-basis: 60%;
+}
+
+.right_column p{
+	margin-top: 10px;
+}
+
+
+.right_column_heading{
+	font-size: 55px;
+	font-weight: 600;
+	color: #ffff;
+}
+
+
+.title_topics{
+	display: flex;
+	margin-top: 10px;
+
+}
+
+.title_links{
+	margin-right: 20px;
+	font-size: 17px;
+	font-weight: 400;
+	position: relative;
+	cursor: pointer;
+	transition: all 0.3s ease-in-out;
+}
+
+/*.title_links:after{
+	content: '';
+	height: 3px;
+	width: 0;
+	left: 0;
+	bottom: -6px;
+	transition: 0.5s;
+	position: absolute;
+	background-color: #ff0844;
+}
+*/
+
+/*
+
+.title_links.active_link1:after{      No space between the title links and active link. refer html code 
+	width:50%;
+}
+*/
+
+.title_links:hover{
+	color: #ff0844;
+	transform: scale(1.075);
+}
+
+.title_contents ul{
+	list-style: none;
+	margin-top: 35px;
+	font-size: 15px;
+}
+
+.title_contents ul li{
+	margin-top: 10px;
+}
+
+.title_contents span{
+	color: #e31b4b;
+}
+
+.title_contents{
+	display: none;
+}
+
+.title_topics_info_skills.active{
+	display: block;
+}
+
+
+.title_topics_info_skills.is-active{
+	display: block;
+}
+
+.title_topics_info_experience.is-active{
+	display: block;
+
+}
+
+.title_topics_info_education.is-active{
+	display: block;
+}
+
+
+@media screen and (max-width: 600px){
+
+	.row{
+		flex-direction: column;
+		align-items: center;
+		
+	}
+
+
+	.left_column, .right_column{
+		width: 100%;
+	}
+
+	.right_column_heading{
+		font-size: 40px;
+	}
+
+	.right_column{
+		margin-top: 40px;
+	}
+}
+
+
+
+
+/* ---------------------------------------- SERVICES SECTION ------------------------------------------------*/
+
+
+.services{
+
+	margin-left: 5%;
+	margin-right: 70px;
+	margin-bottom: 40px;
+
+}
+
+.services_heading{
+	text-align: center;
+	margin-bottom: 30px;
+	font-size: 50px;
+	margin-top: 40px;
+}
+
+
+.services_cards{
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+	grid-gap: 40px;
+}
+
+
+.services_cards div{
+	background-color: #262626;
+	padding: 40px;
+	transition: all 0.3s ease-in-out;
+	transform: all 0.3s ease-in-out;
+	border-radius: 10px;
+}
+
+.services_cards div h2{
+	margin-top: : 10px;
+	margin-bottom: 20px;
+	font-size: 30px;
+	font-weight: 500;
+}
+
+
+.services_cards div i{
+	font-size: 40px !important;
+	margin-bottom: 30px;
+}
+
+.services_cards div p{
+	margin-bottom: 20px;
+	font-size: 13px;
+}
+
+
+.services_cards div a{
+	text-decoration: none;
+	cursor: pointer;
+	color: #ffff;
+	
+}
+
+.services_cards div:hover{
+	transform: translateY(-10px);
+	background-color: #ff0844;
+}
+
+
+
+
+/*-------------------------------- PORTFOLIO SECTION ------------------------------*/
+
+.portfolio{
+	margin-top: 140px;
+	margin-left: 5%;
+	margin-right: 70px;
+	margin-bottom: 70px;
+}
+
+.portfolio_container_work{
+	display: grid;
+	grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+	grid-gap: 40px;
+}
+
+.portfolio_work{
+	overflow: hidden;
+	position: relative;
+	border-radius: 10px;
+}
+
+
+.portfolio_container_work div img{
+	width: 100%;
+	display: block;
+	border-radius: 10px;
+	transition: 0.3s ease-in-out;
+}
+
+
+
+.layer{
+	display: flex;
+	flex-direction: column;
+	font-size: 13px;
+	background-image: linear-gradient(to top, #ff0844 0%,#ffb1 100%);
+	height: 0%;
+	width: 100%;
+	position: absolute;
+	left: 0;
+	bottom: 0;
+	overflow: hidden;
+	border-radius: 10px;
+	align-items: center;
+	text-align: center;
+	justify-content: center;
+	transition: all 0.3s ease-in-out;
+}
+
+.layer p{
+	padding: 20px;
+}
+
+.layer h2{
+	font-weight: 600;
+	font-size: 25px;
+}
+
+.layer a{
+	font-size: 25px;
+	margin-top: 20px;
+	text-decoration: none;
+	line-height: 60px;
+	width: 60px;
+	color: #ff004f;
+	background: #ffff;
+	cursor: pointer;
+	border-radius: 50%;
+}
+
+
+.portfolio_work:hover .layer{
+	height: 100%;
+}
+
+.portfolio_work:hover img{
+	transform: scale(1.1);
+}
+
+.portfolio_btn{
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	margin-top: 40px;
+
+}
+
+.portfolio_btn a{
+	cursor: pointer;
+	padding: 15px 30px;
+	font-size: 16px;
+	border-radius: 10px;
+	border: 1px solid #ff0844;
+	text-decoration: none;
+
+	color: #ffff;
+	background: #080808;
+	transition: all 0.3s ease-in-out;
+	font-weight: 200;
+	border-color: #ff0844;
+}
+
+
+.portfolio_btn a:hover{
+	color: #ffff;
+	background-color: #ff0844;
+}
+
+
+
+
+
+
+
+/* --------------------------------  Contact section -------------------------- */
+.contact{
+	height: 60vh;
+}
+.contact_container{
+	display: flex;
+	margin-left: 6%;
+	margin-right: 70px;
+	margin-top: 100px;
+	height: 100%;
+}
+
+
+.contact_left{
+	flex-basis: 30%;
+}
+
+.contact_right{
+	flex-basis: 65%;
+}
+
+
+.contact_left_heading{
+	margin-bottom: 30px;
+	font-size: 50px;
+	margin-top: 40px;
+}
+
+.contact_left p{
+	margin-bottom: 15px;
+	font-size: 16px;
+}
+
+.contact_left p i{
+	margin-right: 15px;
+	font-size: 25px;
+	text-decoration: none;
+	cursor: pointer;
+	color: #ff0844;
+}
+
+.social_icons{
+	margin-top: 30px;
+	font-size: 25px;
+	margin-bottom: 40px;
+}
+
+.social_icons i{
+	text-decoration: none;
+	cursor: pointer;
+	color: #ffff;
+	margin-right: 15px;
+	transition: 0.3s ease-in-out;
+}
+
+.social_icons i:hover{
+	color: #ff0844;
+	transform: translateY(-4px);
+}
+
+.download_cv{
+	text-decoration: none;
+	color: #ffff;
+	font-size: 13px;
+	border-radius: 2px solid #ff0844;
+	padding: 15px 35px;
+	border-radius: 2px;
+	background-color: #ff0844;
+	margin-top: 40px;
+}
+
+.download_cv:hover{
+	background-color: #E8083E;
+}
+
+
+.contact_right{
+	width: 100%;
+}
+
+.contact_right form{
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+
+}
+
+.contact_right form input{
+	padding: 15px;
+	margin-bottom: 15px;
+	outline: none;
+	background-color: #262626;
+	border:none;
+	color: #ffff;
+}
+
+.contact_right form textarea{
+	padding: 15px;
+	border: none;
+	background-color: #262626;
+	color: #ffff;
+	outline: none;
+	resize: none;
+}
+
+.contact_right form button{
+	padding: 15px;
+	background-color: #ff0844;
+	color: #ffff;
+	border-radius: 2px;
+	border: none;
+	margin-top: 35px;
+	cursor: pointer;
+
+}
+
+
+.contact_right form button:hover{
+	background-color: #E8083E;
+}
+
+#span{
+	margin-top: 40px;
+	color: #61b752;
+}
+
+
+@media screen and (max-width: 600px){
+	.contact{
+		height: 110vh;
+	}
+	.contact_container{
+		flex-direction: column;
+	}
+
+	.contact_left, .contact_right{
+		width: 100%;
+	}
+
+	.contact_right{
+		margin-top: 40px;
+	}
+}
+
+
+
+/* Copyright section */
+
+.copyright{
+	width: 100%;
+	background-color: #262626;
+}
+
+.copyright p{
+	text-align: center;
+	padding: 15px;
+	font-size: 14px;
+}
+
+.copyright p i{
+	margin: 0 2px;
+	color: #ff0844;
+}
