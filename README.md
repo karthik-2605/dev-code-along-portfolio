@@ -1,6 +1,3 @@
-## ***** dev-code-along-portfolio *****
-A portfolio website built as a code-along project from a YouTube tutorial. Learned HTML, CSS, JS and responsiveness while working on it
-
 ## What I Learned from Building This Portfolio Website
 Creating this portfolio website has been a great learning experience. Here are the key concepts and skills I gained:
 
