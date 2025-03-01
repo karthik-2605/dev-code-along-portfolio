@@ -4,7 +4,7 @@ A portfolio website built as a code-along project from a YouTube tutorial. Learn
 ## What I Learned from Building This Portfolio Website
 Creating this portfolio website has been a great learning experience. Here are the key concepts and skills I gained:
 
-## nClick Effects
+## OnClick Effects
 •	Implemented interactive elements using JavaScript's addEventListener.
 •	Used it to trigger animations and smooth transitions.
 •	Improved user experience by adding animation on button clicks and navigation interactions.
